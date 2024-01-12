@@ -6,7 +6,7 @@ const { JSDOM } = require ('jsdom');
 const dompurify = createDomPurify (new JSDOM().window);
 
 const articleSchema = new mongoose.Schema ({
-     title: {
+     keywords: {
           type: String,
           required: true
      },
@@ -33,8 +33,8 @@ const articleSchema = new mongoose.Schema ({
 });
 
 articleSchema.pre ('validate', function (next) {
-     if (this.title) {
-          this.slug = slugify (this.title, { lower: true, strict: true });
+     if (this.keywords) {
+          this.slug = slugify (this.keywords, { lower: true, strict: true });
      };
 
      if (this.markdown) {
