@@ -3,6 +3,12 @@ body {
      background: #f1efef;
 }
 
+.code {
+     background: #333333;
+     margin-top: 20px;
+     font-size: large;
+}
+
 .container {
      width: 60%;
      display: grid;
@@ -12,6 +18,47 @@ body {
      box-sizing: border-box;
      align-items: center;
      height: 100vh;
+}
+.wrapper {
+     display: grid;
+     grid-template-columns: 1fr;
+     margin: auto;
+}
+
+.show {
+     width: 60%;
+/*     display: grid; */
+/*     grid-template-columns: 1fr; */
+     display: inline-flex;
+     flex-direction: column;
+     padding: 20px;
+     gap: 20px;
+     box-sizing: border-box;
+     max-height: 80vh;
+     margin: auto;
+/*     border-color: #acaba8; */
+     border-radius: 5px;
+     border: solid 1px #acaba8;
+     border-width: 1px;
+     margin-bottom: 20px;
+     margin-top: 20px;
+}
+
+.btn-show {
+     display: grid;
+     grid-template-columns: 1fr;
+     margin: auto;
+     box-sizing: border-box;
+     width: 100%;
+}
+
+.btnz {
+     margin: auto;
+     margin-bottom: 5px;
+}
+
+.dates {
+     font-size: small;
 }
 
 .lg-txt {
