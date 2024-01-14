@@ -12,22 +12,82 @@
     <div class="container">
         <h1 class="mb-4">Neat Code Snippets</h1>
         <a href="/articles/new" class="btn btn-success">New Snippet</a>
-
+<div class="wrapper">
         <% articles.forEach(article => { %>
-        <div class="card mt-4">
-            <div class="card-body">
+        <div class="card">
+            <div class="card-body <%= article.id %> ">
                 <h4 class="card-title"> <%= article.keywords %></h4>
                 <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
                 <div class="card-text mb-2"><%= article.description %></div>
-                <a href="articles/<%= article.slug %>" class="btn btn-primary">Show</a>
+                <button class="accordion btn btn-primary">Show</button>
+                <a href="articles/<%= article.id %>" class="btn btn-info">Direct Link</a>
                 <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
                 <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
+                <div class="panel" id="pnl">
+                    <div class="code">
+                        <%- article.sanitizedHtml %>
+                    </div>
+                </div>
             </div>
         </div>
         <% }) %>
     </div>
+    </div>
+
+    <script>
+        /*
+        This portion gets all elements of the card; code is adapted from:
+        https://www.javascripttutorial.net/javascript-dom/javascript-siblings/
+        */
+
+        let getSiblings = function (e) {
+        // for collecting siblings
+            let siblings = []; 
+            // if no parent, return no sibling
+            if(!e.parentNode) {
+                return siblings;
+            }
+            // first child of the parent node
+            let sibling  = e.parentNode.firstChild;
+            // collecting siblings
+            while (sibling) {
+                if (sibling.nodeType === 1 && sibling !== e) {
+                    siblings.push(sibling);
+                }
+                sibling = sibling.nextSibling;
+            }
+            return siblings;
+        };
+
+        /*
+        This portion creates the accordion effect for displaying markdown; code is adapted from:
+        https://www.w3schools.com/howto/howto_js_accordion.asp
+        */
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                /* Toggle between adding and removing the "active" class,
+                to highlight the button that controls the panel */
+                var panel = getSiblings(this).pop();
+                this.classList.toggle("active");
+                /* Toggle between hiding and showing the active panel */
+//                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                panel.style.display = "none";
+                acc.innerHTML = "Show";
+                } else {
+                panel.style.display = "block";
+                acc.innerHTML = "Hide";
+                }
+                //if button == show, make hide, vice versa if ()
+            });
+        }
+    </script>
 
 </body>
 </html>

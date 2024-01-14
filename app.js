@@ -6,7 +6,7 @@ const methodOverride = require ('method-override');
 const app = express();
 const port = 5001;
 
-mongoose.connect ('mongodb://localhost/blog'), {
+mongoose.connect ('mongodb://localhost/notes'), {
      useCreateIndex: true
 };
 
