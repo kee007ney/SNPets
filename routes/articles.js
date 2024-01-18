@@ -41,7 +41,7 @@ router.delete ('/:id', async (req, res) => {
 function saveArticleAndRedirect(path) {
      return async (req, res) => {
           let article = req.article;
-          article.keywords = req.body.keywords;
+          article.keywords = req.body.keywords.split(",");
           article.description = req.body.description;
           article.markdown = req.body.markdown;
           try {

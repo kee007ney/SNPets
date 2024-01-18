@@ -3,8 +3,27 @@ body {
      background: #f1efef;
 }
 
-.code {
+code {
      background: #333333;
+     color: #d66833;
+     font-family: monospace;
+     font-size: larger;
+     margin-top: 20px;
+     font-size: larger;
+     padding: 5px;
+     max-width: 95%;
+}
+
+.fc-markdown {
+     height: 300px;
+}
+
+.fc-description {
+     height: 300px;
+}
+
+.mkdwn {
+     background: #dbdbd9;
      margin-top: 20px;
      font-size: larger;
      padding: 5px;
@@ -21,7 +40,7 @@ body {
      align-items: center;
      height: 100vh;
 }
-.wrapper {
+.wrapper2 {
      width: 100%;
      display: grid;
      grid-template-columns: 1fr;
@@ -82,6 +101,7 @@ body {
      background-color: white;
      display: none;
      overflow: hidden;
+     margin-top: 20px;
 }
 
 .lg-txt {

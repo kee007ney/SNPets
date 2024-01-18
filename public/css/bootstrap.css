@@ -412,8 +412,8 @@ pre {
 }
 
 pre code {
-     font-size: inherit;
-     color: #051b11;
+/*     font-size: inherit;
+     color: #051b11; */
      word-break: normal
 }
 
