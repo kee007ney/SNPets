@@ -19,7 +19,7 @@
                 <h4 class="card-title"> <%= article.keywords %></h4>
                 <div class="card-subtitle text-muted mb-2"><%= article.createdAt.toLocaleDateString() %></div>
                 <div class="card-text mb-2"><%= article.description %></div>
-                <button class="accordion btn btn-primary">Show</button>
+                <button id="btn-show" class="accordion btn btn-primary">Show</button>
                 <a href="articles/<%= article.id %>" class="btn btn-info">Direct Link</a>
                 <a href="articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
                 <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
@@ -76,7 +76,6 @@
                 var panel = getSiblings(this).pop();
                 this.classList.toggle("active");
                 /* Toggle between hiding and showing the active panel */
-//                var panel = this.nextElementSibling;
                 if (panel.style.display === "block") {
                 panel.style.display = "none";
                 acc.innerHTML = "Show";
@@ -84,7 +83,12 @@
                 panel.style.display = "block";
                 acc.innerHTML = "Hide";
                 }
-                //NEED LOGIC: if button == show, make hide, vice versa if ()
+                /* Change the text of the button to "Show" or "Hide" */
+                if (this.textContent === "Show") {
+                    this.textContent = "Hide"
+                } else {
+                    this.textContent = "Show"
+                }
             });
         }
     </script>

@@ -27,11 +27,15 @@ const articleSchema = new mongoose.Schema ({
 });
 
 articleSchema.pre ('validate', function (next) {
+     if (this.keywords) {
+          this.keywords = this.keywords.join(", ");
+     };
      if (this.markdown) {
           this.sanitizedHtml = dompurify.sanitize(marked.parse(this.markdown));
      };
 
      next();
+
 });
 
 module.exports = mongoose.model ('Article', articleSchema);
