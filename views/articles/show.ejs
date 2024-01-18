@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper2">
         <div class="show">
             <h3 class="mb-0"><%= article.keywords %></h3>
             <div class="text-muted dates">
@@ -21,17 +21,17 @@
                 <%- article.description %>
             </div>
 
-            <div class="code">
+            <div class="mkdwn">
                 <%- article.sanitizedHtml %>
             </div>
         </div>
     </div>
     <div class="btn-show">
         <div class="btnz">
-            <a href="/" class="btn btn-secondary">All Snippets</a>
+            <a href="/" class="btn btn-primary">All Snippets</a>
         </div>
         <div class="btnz">
-            <a href="/articles/edit/<%= article.id %>" class="btn btn-info">Edit</a>
+            <a href="/articles/edit/<%= article.id %>" class="btn btn-primary">Edit</a>
         </div>
     </div>
 </body>
