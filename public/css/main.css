@@ -7,7 +7,6 @@ code {
      background: #333333;
      color: #d66833;
      font-family: monospace;
-     font-size: larger;
      margin-top: 20px;
      font-size: larger;
      padding: 5px;
@@ -23,11 +22,15 @@ code {
 }
 
 .mkdwn {
-     background: #dbdbd9;
+/*     color: #d66833; */
+/*     background: #30353b; */
+/*     background: #dbdbd9; */
+     background: #fff;
      margin-top: 20px;
-     font-size: larger;
+     font-size: large;
      padding: 5px;
      max-width: 95%;
+     font-family: monospace;
 }
 
 .container {
