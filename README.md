@@ -1,6 +1,10 @@
 # Code Notebook
 
-This project is a simple MongoDB-based web app for recording helpful commands. Many of the existing tools I tried didn't do what I wanted or were too expensive. This simple, straightforward tool records commands and snippets you find useful, though which may not necessarily warrant their own alias.
+This project is a simple MongoDB-based web app for recording helpful commands. Many of the existing tools I tried didn't do what I wanted or were too expensive. This simple, straightforward tool records commands and snippets you find useful, though which may not necessarily warrant their own alias (and which might be hard to keep track of as an alias anyway).
+
+<p align="center">
+  <img src="screenshot.png" width="100%" title="Screenshot of code notebook.">
+</p>
 
 Project uses 
 ## To run:
