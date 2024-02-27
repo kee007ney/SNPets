@@ -49,3 +49,6 @@ Change the port in app.js (`const port = 5001`) to whatever you like if you pref
 I may have used `npm init` at some point, I can't remember if it was part of this project or not.
 
 Note that the mongod.conf file is here for reference. It belongs in the /etc/ directory.
+
+There is a launch script ("techNote.sh") to launch it locally (or wherever) once it's set up. The directory is hard coded from the virtual environment that was used to develop the project. Replace it with whatever you want.
+
